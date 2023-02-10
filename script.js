@@ -153,7 +153,8 @@ btn_equal.addEventListener('click', () => {
   let firstNumber = parseFloat(display.value.split(' ')[0]);
   let secondNumber = parseFloat(display.value.split(' ')[2]);
   let result = calculate(firstNumber, secondNumber, currentOperator);
-  display.value = result;
+  // display result with 2 decimal places
+  display.value = result.toFixed(2);
 });
 
 // function to calculate
@@ -188,4 +189,9 @@ btn_clearAll.addEventListener('click', () => {
 // backspace button event listener
 btn_backspace.addEventListener('click', () => {
   display.value = display.value.slice(0, -1);
+});
+
+// dot button event listener
+btn_dot.addEventListener('click', () => {
+  display.value += '.';
 });
